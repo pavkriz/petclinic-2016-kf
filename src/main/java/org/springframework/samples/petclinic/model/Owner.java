@@ -56,10 +56,19 @@ public class Owner extends Person {
     @NotEmpty
     @Digits(fraction = 0, integer = 10)
     private String telephone;
+    
+    private String email;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets;
 
+    public void setEmail(String email) {
+		this.email = email;
+	}
+    
+    public String getEmail() {
+		return email;
+	}
 
     public String getAddress() {
         return this.address;
